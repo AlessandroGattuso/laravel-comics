@@ -1,7 +1,7 @@
-@import '~bootstrap/scss/bootstrap'
-
-$primary: #0282F9
-$light-dark: rgb(44, 44, 44)
+//@import '~bootstrap/scss/bootstrap'
+@import './partials/_variables.sass'
+@import './partials/_header.sass'
+@import './partials/_main.sass'
 
 *
   margin: 0
@@ -51,29 +51,3 @@ li
 
 .text-white
   color: white
-
-
-header
-
-  height: 80px
-  
-  .menu
-    justify-content: flex-end
-    
-  ul
-    display: flex
-    gap: 20px
-    li
-      font-size: 13px
-      font-weight: 700
-      flex-basis: calc(100% / 11)
-      text-transform: uppercase
-      border-bottom: 4px solid transparent
-      &:hover,&.active
-        color: $primary
-        border-bottom: 4px solid $primary
-          
-  
-  .logo
-    height: 55px
-    width: 55px
