@@ -21,9 +21,9 @@
   <div class="container-fluid shop-container">
     <div class="container flex flex-align-center text-white h-100">
       <div class="flex flex-align-center cursor-pointer shop-item">
-        @foreach($data['mainMenu'] as $menuItem)
-          <img src="{{Vite::asset('resources/images/'.$menuItem['img'])}}" alt="Image not found">
-          <span>{{ $menuItem['label'] }}</span>
+        @foreach($data['images'] as $image)
+          <img src="{{Vite::asset('resources/images/'.$image['file'])}}" alt="Image not found">
+          <span>{{ $image['label'] }}</span>
         @endforeach
       </div>
     </div>
