@@ -1,7 +1,9 @@
 <header>
   <div class="container flex flex-between flex-align-center h-100">
     <div>
-      <img class="logo" src="{{Vite::asset('resources/images/dc-logo.png')}}" alt="Logo not found">
+      <a href="{{route('home')}}">
+        <img class="logo" src="{{Vite::asset('resources/images/dc-logo.png')}}" alt="Logo not found">
+      </a>
     </div>
     <div class="menu flex h-100 w-100">
       <ul class="h-100 mr-2">

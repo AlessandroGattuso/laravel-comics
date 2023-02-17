@@ -12,8 +12,19 @@
           <div>
             <span>Series: </span><span class="series">{{$comic['series']}}</span>
           </div>
+          <div class="flex flex-center">
+            <span>Artists: </span>
+            <p class="artists">
+                {{implode(', ', $comic['artists'])}} 
+            </p>
+          </div>
+          <div class="flex flex-center">
+            <span>Writers: </span>
+            <p class="writers">
+              {{implode(', ', $comic['writers'])}} 
+            </p>
+          </div>
           <span class="price">{{$comic['price']}}</span>
-          <p></p>
           <div>
             <button>Purchase</button>
           </div>
