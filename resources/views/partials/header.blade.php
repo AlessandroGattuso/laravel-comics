@@ -12,7 +12,7 @@
         @endforeach
       </ul>
       <div class="h-100 flex flex-center">
-        <form class="flex search-container">   
+        <form class="flex search-container gap-1">   
           <input type="text" name="search" placeholder="Search">
           <button class="cursor-pointer" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>        

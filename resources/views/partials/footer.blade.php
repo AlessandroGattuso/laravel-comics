@@ -61,7 +61,7 @@
             <div class="flex flex-align-center">
               <span>FOLLOW US</span>
             </div>
-            <div class="flex flex-align-center">
+            <div class="flex flex-align-center gap-1">
               @foreach($data['socials'] as $social)
                 <img src="{{Vite::asset('resources/images/footer-'.$social).'.png'}}" alt="Image not found">
               @endforeach

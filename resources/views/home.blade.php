@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
-
-    <!-- fontawesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-    @include('partials.header')
-    @include('partials.main')
-    @include('partials.footer')
-</body>
-
-</html>
+@extends('layouts.app')
+@section('home')
+    <main>
+        <div class="container-fluid jumbotron"></div>
+        <div class="container-fluid comic-container">
+            <div class="container flex flex-align-center text-white h-100">
+            <div class="label">
+                CURRENT SERIES
+            </div>
+            <div class="grid-card">
+                @foreach($data['comics'] as $key => $comic)
+                <div class="card">
+                    <a href="{{route('comic', ['comicID' => $key])}}">
+                        <img src="{{$comic['thumb']}}" alt="Image not found">
+                        <p class="title">{{ $comic['series'] }}</p>
+                    </a>
+                </div>
+                @endforeach
+            </div>
+            </div>
+            <div class="container flex flex-jc-center">
+                <button>LOAD MORE</button>
+            </div>
+        </div>
+        <div class="container-fluid shop-container">
+            <div class="container flex flex-align-center text-white h-100">
+            @foreach($data['images'] as $image)
+                <div class="flex flex-align-center cursor-pointer shop-item">
+                <img src="{{Vite::asset('resources/images/'.$image['file'])}}" alt="Image not found">
+                <span>{{ $image['label'] }}</span>
+                </div>
+            @endforeach
+            </div>
+        </div>
+    </main>
+@endsection
